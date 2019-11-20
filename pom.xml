@@ -10,6 +10,9 @@
     <modules>
         <module>config-server</module>
         <module>eureka-server</module>
+        <module>gateway-service</module>
+        <module>feign-service</module>
+        <module>finance-service</module>
     </modules>
 
     <parent>

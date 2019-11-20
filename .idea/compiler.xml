@@ -7,14 +7,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaserver" />
+        <module name="financeservice" />
         <module name="configserver" />
+        <module name="feignservice" />
+        <module name="gatewayservice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="zuulservice" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configserver" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
+      <module name="feignservice" options="-parameters" />
+      <module name="financeservice" options="-parameters" />
+      <module name="gatewayservice" options="-parameters" />
+      <module name="zuulservice" options="-parameters" />
     </option>
   </component>
 </project>

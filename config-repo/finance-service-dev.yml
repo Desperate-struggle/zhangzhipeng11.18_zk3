@@ -6,8 +6,6 @@ spring:
     username: remote
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
-  application:
-    name: finance-service # 应用名称
   jpa:
     hibernate:
       ddl-auto: update  # 第一次简表create  后面用update
@@ -15,4 +13,4 @@ spring:
 eureka:
   client:
     service-url: # EurekaServer地址
-      defaultZone: http://127.0.0.1:6060/eureka
+      defaultZone: http://localhost:6060/eureka

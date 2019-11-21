@@ -4,6 +4,7 @@ import com.zhangzhipeng.zk3.entity.Contract;
 import com.zhangzhipeng.zk3.entity.Rmoney;
 import com.zhangzhipeng.zk3.service.RmoneyService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -34,32 +35,32 @@ public class RmoneyController {
         return service.query(page,rows,cid,types,rname,rbz,dt1,dt2,rp1,rp2);
     }
 
-    @RequestMapping("add")
+    @RequestMapping(value = "add",method = RequestMethod.POST)
     public Rmoney add(@RequestBody Rmoney rmoney){
         return service.add(rmoney);
     }
 
-    @RequestMapping("update")
+    @RequestMapping(value = "update",method = RequestMethod.POST)
     public Rmoney update(@RequestBody Rmoney rmoney){
         return service.update(rmoney);
     }
 
-    @RequestMapping("del")
+    @RequestMapping(value = "del",method = RequestMethod.POST)
     public boolean delete(Integer id){
         return service.delete(id);
     }
 
-    @RequestMapping("dels")
+    @RequestMapping(value = "dels",method = RequestMethod.POST)
     public boolean deletes(Integer[] ids){
         return service.deletes(ids);
     }
 
-    @RequestMapping("lists")
+    @RequestMapping(value = "lists",method = RequestMethod.POST)
     public List<Contract> li(){
         return service.list();
     }
 
-    @RequestMapping("selectById")
+    @RequestMapping(value = "selectById",method = RequestMethod.POST)
     public Contract se(Integer id){
         return service.selectById(id);
     }

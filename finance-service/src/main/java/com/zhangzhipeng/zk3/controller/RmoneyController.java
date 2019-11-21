@@ -3,6 +3,8 @@ package com.zhangzhipeng.zk3.controller;
 import com.zhangzhipeng.zk3.entity.Contract;
 import com.zhangzhipeng.zk3.entity.Rmoney;
 import com.zhangzhipeng.zk3.service.RmoneyService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
@@ -13,6 +15,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@Api(tags = "增删改查")
 public class RmoneyController {
 
     @Autowired
@@ -21,6 +24,7 @@ public class RmoneyController {
     @Value("${server.port}")
     String port;
 
+    @ApiOperation(value = "分页+条件查询")
     @RequestMapping("list")
     public Page<Rmoney> query(@RequestParam(value = "page",defaultValue = "1") Integer page,
                               @RequestParam(value = "rows",defaultValue = "3") Integer rows,

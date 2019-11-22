@@ -10,7 +10,15 @@ spring:
     hibernate:
       ddl-auto: update  # 第一次简表create  后面用update
     show-sql: true
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: file:${file.path}
 eureka:
   client:
     service-url: # EurekaServer地址
       defaultZone: http://localhost:6060/eureka
+#文件上传
+file:
+  path: D:/img/
+  fileDomain: http://localhost:10001/

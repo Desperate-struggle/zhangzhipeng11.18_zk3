@@ -1,5 +1,6 @@
 package com.zhangzhipeng.zk3.service;
 
+import com.zhangzhipeng.zk3.entity.City;
 import com.zhangzhipeng.zk3.entity.Contract;
 import com.zhangzhipeng.zk3.entity.Rmoney;
 import org.springframework.data.domain.Page;
@@ -23,5 +24,7 @@ public interface RmoneyService {
     boolean deletes(Integer[] ids);
 
     Contract selectById(Integer id);
+
+    List<City> findAllById(Integer pid);
 
 }

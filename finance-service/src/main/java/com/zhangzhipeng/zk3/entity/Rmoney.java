@@ -35,6 +35,20 @@ public class Rmoney {
 
     String rbz;//备注
 
+    String pic;//图片
+
+    Integer shengid;
+    @Transient
+    String shengname;
+
+    Integer shiid;
+    @Transient
+    String shiname;
+
+    Integer quid;
+    @Transient
+    String quname;
+
 
     @Override
     public String toString() {
@@ -50,15 +64,14 @@ public class Rmoney {
                 ", rprice=" + rprice +
                 ", rname='" + rname + '\'' +
                 ", rbz='" + rbz + '\'' +
+                ", pic='" + pic + '\'' +
+                ", shengid=" + shengid +
+                ", shengname='" + shengname + '\'' +
+                ", shiid=" + shiid +
+                ", shiname='" + shiname + '\'' +
+                ", quid=" + quid +
+                ", quname='" + quname + '\'' +
                 '}';
-    }
-
-    public Integer getCid() {
-        return cid;
-    }
-
-    public void setCid(Integer cid) {
-        this.cid = cid;
     }
 
     public Integer getId() {
@@ -75,6 +88,14 @@ public class Rmoney {
 
     public void setContract(Contract contract) {
         this.contract = contract;
+    }
+
+    public Integer getCid() {
+        return cid;
+    }
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
     }
 
     public String getCnumber() {
@@ -139,5 +160,61 @@ public class Rmoney {
 
     public void setRbz(String rbz) {
         this.rbz = rbz;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    public Integer getShengid() {
+        return shengid;
+    }
+
+    public void setShengid(Integer shengid) {
+        this.shengid = shengid;
+    }
+
+    public String getShengname() {
+        return shengname;
+    }
+
+    public void setShengname(String shengname) {
+        this.shengname = shengname;
+    }
+
+    public Integer getShiid() {
+        return shiid;
+    }
+
+    public void setShiid(Integer shiid) {
+        this.shiid = shiid;
+    }
+
+    public String getShiname() {
+        return shiname;
+    }
+
+    public void setShiname(String shiname) {
+        this.shiname = shiname;
+    }
+
+    public Integer getQuid() {
+        return quid;
+    }
+
+    public void setQuid(Integer quid) {
+        this.quid = quid;
+    }
+
+    public String getQuname() {
+        return quname;
+    }
+
+    public void setQuname(String quname) {
+        this.quname = quname;
     }
 }

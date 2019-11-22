@@ -1,7 +1,9 @@
 package com.zhangzhipeng.zk3.service;
 
+import com.zhangzhipeng.zk3.dao.CityDao;
 import com.zhangzhipeng.zk3.dao.ContractDao;
 import com.zhangzhipeng.zk3.dao.RmoneyDao;
+import com.zhangzhipeng.zk3.entity.City;
 import com.zhangzhipeng.zk3.entity.Contract;
 import com.zhangzhipeng.zk3.entity.Rmoney;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,9 @@ public class RmoneyServiceImpl implements RmoneyService{
 
     @Autowired
     ContractDao contractDao;
+
+    @Autowired
+    CityDao cityDao;
 
 
     @Override
@@ -76,7 +81,19 @@ public class RmoneyServiceImpl implements RmoneyService{
             }
         };
         PageRequest pageRequest = PageRequest.of(page - 1, rows);
-        return dao.findAll(specification,pageRequest);
+        Page all = dao.findAll(specification, pageRequest);
+        List<Rmoney> rmonies = all.getContent();
+        for (Rmoney rmony : rmonies) {
+            List<Integer> ids = new ArrayList<>();
+            ids.add(rmony.getShengid());
+            ids.add(rmony.getShiid());
+            ids.add(rmony.getQuid());
+            List<City> allByPid = cityDao.findAllById(ids);
+            rmony.setShengname(allByPid.get(0).getName());
+            rmony.setShiname(allByPid.get(1).getName());
+            rmony.setQuname(allByPid.get(2).getName());
+        }
+        return all;
     }
 
     @Override
@@ -112,4 +129,10 @@ public class RmoneyServiceImpl implements RmoneyService{
     public Contract selectById(Integer id) {
         return contractDao.findById(id).get();
     }
+
+    @Override
+    public List<City> findAllById(Integer pid) {
+        return cityDao.findAllById(pid);
+    }
+
 }

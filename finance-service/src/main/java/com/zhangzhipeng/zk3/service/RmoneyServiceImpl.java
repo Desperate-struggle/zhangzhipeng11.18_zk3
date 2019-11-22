@@ -131,6 +131,11 @@ public class RmoneyServiceImpl implements RmoneyService{
     }
 
     @Override
+    public Rmoney selectUpdate(Integer id) {
+        return dao.findById(id).get();
+    }
+
+    @Override
     public List<City> findAllById(Integer pid) {
         return cityDao.findAllById(pid);
     }

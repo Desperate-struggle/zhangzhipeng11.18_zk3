@@ -25,6 +25,8 @@ public interface RmoneyService {
 
     Contract selectById(Integer id);
 
+    Rmoney selectUpdate(Integer id);
+
     List<City> findAllById(Integer pid);
 
 }

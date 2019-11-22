@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="eurekaserver" />
-        <module name="financeservice" />
+        <module name="gatewayservice" />
         <module name="configserver" />
         <module name="feignservice" />
-        <module name="gatewayservice" />
+        <module name="financeservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

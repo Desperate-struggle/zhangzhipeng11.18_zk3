@@ -48,7 +48,7 @@ public class RmoneyController {
         File file1 = new File(fileImg+filePath);
         file.transferTo(file1);
 
-        map.put("pic",filePath+fileDomain);
+        map.put("pic",fileDomain+filePath);
 
         return map;
     }
@@ -101,5 +101,10 @@ public class RmoneyController {
     @RequestMapping(value = "selectByPid",method = RequestMethod.POST)
     public List<City> sp(Integer pid){
         return service.findAllById(pid);
+    }
+
+    @RequestMapping(value = "selectUpdate",method = RequestMethod.POST)
+    public Rmoney selectB(Integer id){
+        return service.selectUpdate(id);
     }
 }

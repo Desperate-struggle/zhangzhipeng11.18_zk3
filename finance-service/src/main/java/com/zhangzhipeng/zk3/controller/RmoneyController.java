@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin
+@Api(tags = "增删改查")
 public class RmoneyController {
 
     @Autowired
@@ -24,6 +25,7 @@ public class RmoneyController {
     @Value("${server.port}")
     String port;
 
+    @ApiOperation(value = "分页+条件查询")
     @RequestMapping("list")
     public Page<Rmoney> query(@RequestParam(value = "page",defaultValue = "1") Integer page,
                               @RequestParam(value = "rows",defaultValue = "3") Integer rows,

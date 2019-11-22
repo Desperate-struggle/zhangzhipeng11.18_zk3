@@ -3,15 +3,15 @@ server:
   cloud:
     gateway:
       routes:
-        - id: jpa
-          uri: lb://finance-service
+        - id: finance-service
+          uri: http://localhost:10001/
           order: 0
           predicates:
             - Path=/api/service/**
             - After=2019-11-09T10:11:00.129+08:00[Asia/Shanghai]
 #            - Header=token,[0-5]
-          filters:
-            - StripPrefix=2
+ #         filters:
+  #          - StripPrefix=2
 eureka:
   client:
     service-url: # EurekaServer地址

@@ -11,7 +11,7 @@ server:
             - After=2019-11-09T10:11:00.129+08:00[Asia/Shanghai]
 #            - Header=token,[0-5]
           filters:
-            - StripPrefix=2
+            - StripPrefix=0
 eureka:
   client:
     service-url: # EurekaServer地址

@@ -10,7 +10,7 @@ spring:
           predicates:
             - Path=/api/service/**
             - After=2019-11-09T10:11:00.129+08:00[Asia/Shanghai]
-#            - Header=token,[0-5]
+          #            - Header=token,[0-5]
           filters:
             - StripPrefix=2
 eureka:

@@ -43,13 +43,15 @@ public class RmoneyServiceImpl implements RmoneyService{
                     Predicate like = criteriaBuilder.equal(root.get("cid"),cid);
                     list.add(like);
                 }
-                if (!StringUtils.isEmpty(rname)){
-                    Predicate name1 = criteriaBuilder.like(root.get("rname"), '%' + rname + '%');
-                    list.add(name1);
-                }
-                if (!StringUtils.isEmpty(rbz)){
-                    Predicate bz1 = criteriaBuilder.like(root.get("rbz"), '%' + rbz + '%');
-                    list.add(bz1);
+                if (!StringUtils.isEmpty(types)){
+                    if (!StringUtils.isEmpty(rname)){
+                        Predicate name1 = criteriaBuilder.like(root.get("rname"), '%' + rname + '%');
+                        list.add(name1);
+                    }
+                    if (!StringUtils.isEmpty(rbz)){
+                        Predicate bz1 = criteriaBuilder.like(root.get("rbz"), '%' + rbz + '%');
+                        list.add(bz1);
+                    }
                 }
                 if (!StringUtils.isEmpty(dt1)&&!StringUtils.isEmpty(dt2)){
                     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -66,6 +68,7 @@ public class RmoneyServiceImpl implements RmoneyService{
                     Predicate rspare = criteriaBuilder.between(root.get("rspare"), rp1, rp2);
                     list.add(rspare);
                 }
+
                 Predicate[] predicates = new Predicate[list.size()];
                 Predicate[] predicates1 = list.toArray(predicates);
                 Predicate and = criteriaBuilder.and(predicates1);

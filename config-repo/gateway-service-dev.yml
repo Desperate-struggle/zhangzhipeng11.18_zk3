@@ -7,11 +7,11 @@ server:
           uri: lb://finance-service
           order: 0
           predicates:
-            - Path=/**
+            - Path=/api/service/**
             - After=2019-11-09T10:11:00.129+08:00[Asia/Shanghai]
 #            - Header=token,[0-5]
           filters:
-            - StripPrefix=0
+            - StripPrefix=2
 eureka:
   client:
     service-url: # EurekaServer地址

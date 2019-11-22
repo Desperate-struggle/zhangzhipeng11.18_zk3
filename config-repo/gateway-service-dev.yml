@@ -7,7 +7,8 @@ server:
           uri: lb://finance-service
           order: 0
           predicates:
-            - Path=/api/service/**
+            - Path=/**
+            - After=2019-11-09T10:11:00.129+08:00[Asia/Shanghai]
 #            - Header=token,[0-5]
           filters:
             - StripPrefix=2

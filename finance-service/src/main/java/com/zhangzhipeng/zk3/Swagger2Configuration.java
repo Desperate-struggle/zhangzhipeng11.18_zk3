@@ -16,9 +16,8 @@ public class Swagger2Configuration {
 
     @Bean
     public Docket docket(){
-
-        return new Docket(DocumentationType.SWAGGER_2).groupName("api").
-                select().apis(RequestHandlerSelectors.basePackage("com.zhangzhipeng.zk3.controller")).
-                paths(PathSelectors.any()).build().apiInfo(new ApiInfoBuilder().title("Swagger2测试").build());
+        return new Docket(DocumentationType.SWAGGER_2).groupName("api").select().apis(RequestHandlerSelectors.basePackage("com.zhangzhipeng.zk3.controller")).paths(PathSelectors.any()).build().apiInfo(new ApiInfoBuilder().title("Swagger测试哦").build());
     }
+
+
 }
